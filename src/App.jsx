@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, lazy, Suspense } from 'react'
 import { profile, stats, skills, publications, projects, posts, socials, links } from './data'
 import { Icon } from './Icons'
+
+const ArticlePage = lazy(() => import('./ArticlePage'))
 
 const nav = [
   { id: 'home', label: '首页' },
@@ -280,51 +282,6 @@ function Blog() {
   )
 }
 
-function ArticlePage({ post }) {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [post])
-  const hasContent = post.content && post.content.length > 0
-  return (
-    <div className="article-wrap">
-      <div className="article-topbar">
-        <a className="article-back" href="#blog">
-          <span className="back-arrow">←</span> 返回主页
-        </a>
-        <a className="brand" href="#home">
-          <span className="brand-mark">{profile.name.charAt(0)}</span>
-          <span className="brand-name">{profile.name}</span>
-        </a>
-      </div>
-      <article className="article">
-        <span className="post-tag">{post.tag}</span>
-        <h1 className="article-title">{post.title}</h1>
-        <div className="article-meta">
-          <time>{post.date}</time>
-        </div>
-        <div className="article-body">
-          {hasContent ? (
-            post.content.map((para, i) => <p key={i}>{para}</p>)
-          ) : (
-            <p className="article-pending">正文整理中，敬请期待。</p>
-          )}
-        </div>
-        {post.source && (
-          <a
-            className="article-source"
-            href={post.source}
-            target="_blank"
-            rel="noreferrer"
-          >
-            原文首发于知乎 <Icon name="arrow" size={14} />
-          </a>
-        )}
-      </article>
-      <Footer />
-    </div>
-  )
-}
-
 function Contact() {
   return (
     <section id="contact" className="section contact">
@@ -426,7 +383,13 @@ export default function App() {
 
   if (route.name === 'essay') {
     const post = posts.find((p) => p.slug === route.slug)
-    if (post) return <ArticlePage post={post} />
+    if (post) {
+      return (
+        <Suspense fallback={<div className="route-loading">载入中…</div>}>
+          <ArticlePage post={post} />
+        </Suspense>
+      )
+    }
   }
   return <Home />
 }
