@@ -580,6 +580,10 @@ a {
   color: var(--text-dim);
   margin-bottom: 8px;
 }
+.pub-me {
+  color: var(--text);
+  font-weight: 700;
+}
 .pub-meta {
   display: flex;
   flex-wrap: wrap;

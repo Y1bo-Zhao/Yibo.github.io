@@ -38,7 +38,7 @@ export const skills = [
 export const publications = [
   {
     title: 'Unmanned aerial vehicles for search and rescue: A survey',
-    authors: 'Y Zhao, M Lyu, C Huang, H Huang',
+    authors: 'M Lyu, Y Zhao, C Huang, H Huang',
     venue: 'Remote Sensing 15(13), 3266',
     year: '2023',
     citations: 546,
@@ -64,7 +64,7 @@ export const publications = [
   },
   {
     title: 'Quadrotor Ego-Noise-Based Passive Acoustic Sensing for Obstacle Detection',
-    authors: 'Y Zhao, M Lyu, C Huang',
+    authors: 'M Lyu, Y Zhao, C Huang',
     venue: 'IEEE Int. Conf. on Control & Automation (ICCA)',
     year: '2025',
     citations: 0,
@@ -72,7 +72,7 @@ export const publications = [
   },
   {
     title: 'IMU dead-reckoning localization with RNN-IEKF algorithm',
-    authors: 'Y Zhao, H Zhou, X Xiong, Y Lou, S Kamal',
+    authors: 'H Zhou, Y Zhao, X Xiong, Y Lou, S Kamal',
     venue: 'IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS)',
     year: '2022',
     citations: 20,
@@ -80,7 +80,7 @@ export const publications = [
   },
   {
     title: 'Range-based reactive deployment of a flying robot for target coverage',
-    authors: 'Y Zhao, M Lyu, H Huang',
+    authors: 'M Lyu, Y Zhao, H Huang',
     venue: 'Aerospace 9(11), 731',
     year: '2022',
     citations: 1,

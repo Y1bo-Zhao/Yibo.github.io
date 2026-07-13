@@ -174,7 +174,15 @@ function Publications() {
               <div className="pub-year">{p.year}</div>
               <div className="pub-main">
                 <h3 className="pub-title">{p.title}</h3>
-                <p className="pub-authors">{p.authors}</p>
+                <p className="pub-authors">
+                  {p.authors.split(/(Y Zhao)/).map((part, i) =>
+                    part === 'Y Zhao' ? (
+                      <strong className="pub-me" key={i}>{part}</strong>
+                    ) : (
+                      part
+                    )
+                  )}
+                </p>
                 <div className="pub-meta">
                   <span className="pub-venue">{p.venue}</span>
                   {p.citations > 0 && (
