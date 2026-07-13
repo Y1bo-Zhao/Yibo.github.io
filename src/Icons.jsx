@@ -68,6 +68,34 @@ export function Icon({ name, size = 20 }) {
           <circle cx="12" cy="10" r="3" />
         </svg>
       )
+    case 'phone':
+      return (
+        <svg {...props}>
+          <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z" />
+        </svg>
+      )
+    case 'scholar':
+      return (
+        <svg {...props}>
+          <path d="M12 3 1 9l11 6 9-4.9V17" />
+          <path d="M5 12.5V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-4.5" />
+        </svg>
+      )
+    case 'zhihu':
+      return (
+        <svg {...props} strokeWidth={0}>
+          <text
+            x="12"
+            y="17.5"
+            textAnchor="middle"
+            fontSize="15"
+            fontWeight="700"
+            fill="currentColor"
+          >
+            知
+          </text>
+        </svg>
+      )
     default:
       return null
   }

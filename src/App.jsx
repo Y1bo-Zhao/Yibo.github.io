@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react'
-import { profile, stats, skills, projects, posts, socials } from './data'
+import { profile, stats, skills, publications, projects, posts, socials, links } from './data'
 import { Icon } from './Icons'
 
 const nav = [
   { id: 'home', label: '首页' },
   { id: 'about', label: '关于' },
-  { id: 'projects', label: '作品' },
-  { id: 'blog', label: '博客' },
+  { id: 'publications', label: '论文' },
+  { id: 'projects', label: '项目' },
+  { id: 'blog', label: '写作' },
   { id: 'contact', label: '联系' },
 ]
 
@@ -123,6 +124,7 @@ function About() {
             <a href={`mailto:${profile.email}`}>
               <Icon name="mail" size={16} /> {profile.email}
             </a>
+            <span><Icon name="phone" size={16} /> {profile.phone}</span>
           </div>
         </div>
         <div className="stats" data-reveal>
@@ -152,12 +154,56 @@ function About() {
   )
 }
 
+function Publications() {
+  return (
+    <section id="publications" className="section">
+      <div className="section-head" data-reveal>
+        <span className="section-index">02</span>
+        <h2 className="section-title">论文 · Publications</h2>
+      </div>
+      <div className="pub-list">
+        {publications.map((p) => {
+          const Tag = p.link ? 'a' : 'div'
+          return (
+            <Tag
+              className={`pub-item${p.highlight ? ' pub-highlight' : ''}`}
+              key={p.title}
+              data-reveal
+              {...(p.link ? { href: p.link, target: '_blank', rel: 'noreferrer' } : {})}
+            >
+              <div className="pub-year">{p.year}</div>
+              <div className="pub-main">
+                <h3 className="pub-title">{p.title}</h3>
+                <p className="pub-authors">{p.authors}</p>
+                <div className="pub-meta">
+                  <span className="pub-venue">{p.venue}</span>
+                  {p.citations > 0 && (
+                    <span className="pub-cites">被引 {p.citations}</span>
+                  )}
+                </div>
+              </div>
+            </Tag>
+          )
+        })}
+      </div>
+      <a
+        className="pub-more"
+        href={links.scholar}
+        target="_blank"
+        rel="noreferrer"
+      >
+        在 Google Scholar 查看全部 <Icon name="arrow" size={16} />
+      </a>
+    </section>
+  )
+}
+
 function Projects() {
   return (
     <section id="projects" className="section">
       <div className="section-head" data-reveal>
-        <span className="section-index">02</span>
-        <h2 className="section-title">精选作品</h2>
+        <span className="section-index">03</span>
+        <h2 className="section-title">项目 · Projects</h2>
       </div>
       <div className="project-grid">
         {projects.map((p) => (
@@ -199,8 +245,8 @@ function Blog() {
   return (
     <section id="blog" className="section">
       <div className="section-head" data-reveal>
-        <span className="section-index">03</span>
-        <h2 className="section-title">最新文章</h2>
+        <span className="section-index">04</span>
+        <h2 className="section-title">写作 · 知乎</h2>
       </div>
       <div className="post-list">
         {posts.map((p) => (
@@ -232,16 +278,19 @@ function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="contact-card" data-reveal>
-        <span className="section-index">04</span>
+        <span className="section-index">05</span>
         <h2 className="contact-title">
-          一起做点<span className="gradient-text">有意思的事</span>
+          一起探索<span className="gradient-text">机器人的未来</span>
         </h2>
         <p className="contact-sub">
-          有项目合作、技术交流或只是想打个招呼？随时给我发邮件。
+          有科研合作、学术交流或只是想打个招呼？欢迎通过邮件或电话联系我。
         </p>
         <a className="btn btn-primary btn-lg" href={`mailto:${profile.email}`}>
           <Icon name="mail" size={18} /> {profile.email}
         </a>
+        <p className="contact-phone">
+          <Icon name="phone" size={16} /> {profile.phone}
+        </p>
         <div className="hero-socials">
           {socials.map((s) => (
             <a
@@ -300,6 +349,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Publications />
         <Projects />
         <Blog />
         <Contact />

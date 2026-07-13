@@ -541,6 +541,79 @@ a {
 .post-date { font-size: 0.85rem; font-family: monospace; }
 
 /* ============================================================
+   Publications
+   ============================================================ */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+}
+.pub-item {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 20px;
+  padding: 24px 8px;
+  border-top: 1px solid var(--border);
+  transition: background 0.25s, padding 0.25s;
+}
+.pub-list .pub-item:last-child { border-bottom: 1px solid var(--border); }
+.pub-item:hover {
+  background: var(--surface);
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.pub-year {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: var(--text-faint);
+  padding-top: 3px;
+}
+.pub-highlight .pub-year { color: var(--cyan); }
+.pub-title {
+  font-size: 1.12rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.pub-highlight .pub-title { color: var(--text); }
+.pub-authors {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+.pub-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+.pub-venue {
+  color: var(--text-faint);
+  font-style: italic;
+}
+.pub-cites {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: rgba(110, 231, 255, 0.1);
+  border: 1px solid rgba(110, 231, 255, 0.25);
+  color: var(--cyan);
+  font-family: monospace;
+  font-size: 0.78rem;
+}
+a.pub-item { color: inherit; }
+.pub-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cyan);
+  transition: gap 0.2s;
+}
+.pub-more:hover { gap: 12px; }
+
+/* ============================================================
    Contact
    ============================================================ */
 .contact { display: grid; place-items: center; }
@@ -568,6 +641,14 @@ a {
   margin-bottom: 32px;
   max-width: 460px;
   margin-inline: auto;
+}
+.contact-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--text-dim);
+  font-size: 0.95rem;
 }
 .contact-card .hero-socials { margin-top: 28px; }
 
