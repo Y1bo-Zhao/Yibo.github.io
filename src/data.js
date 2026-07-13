@@ -115,28 +115,28 @@ export const projects = [
   },
 ]
 
-// ---- 知乎写作：把下面换成你真实的文章标题和链接 ----
+// ---- 知乎写作 ----
 export const posts = [
   {
-    title: '（示例）从零理解无人机轨迹优化',
-    date: '2026-06-20',
-    summary: '把这三条换成你在知乎发表的真实文章标题、摘要和链接即可。',
-    link: links.zhihu,
-    tag: '算法笔记',
+    title: 'UAVs Planning and Control 学习笔记（一）：Minimum Snap + SE(3) Control',
+    date: '2023-08',
+    summary: 'Minimum Snap 轨迹生成与 SE(3) 几何控制的推导与学习笔记。',
+    link: 'https://zhuanlan.zhihu.com/p/580647314',
+    tag: '规划与控制',
   },
   {
-    title: '（示例）MPC 在四旋翼控制中的应用笔记',
-    date: '2026-05-08',
-    summary: '从模型预测控制的原理，到落地到四旋翼平台的工程实践。',
-    link: links.zhihu,
+    title: 'UAVs Planning and Control 学习笔记（二）：MPC 及其变种的推导和示例',
+    date: '2023-10',
+    summary: '模型预测控制（MPC）及若干变种的推导思路与示例。',
+    link: 'https://zhuanlan.zhihu.com/p/652151656',
     tag: '控制',
   },
   {
-    title: '（示例）读博第一年：我踩过的坑与收获',
-    date: '2026-04-15',
-    summary: '关于科研节奏、工具选择与心态调整的一些真实体会。',
-    link: links.zhihu,
-    tag: '科研随笔',
+    title: '读书笔记：《天意》+《焦虑的人》',
+    date: '2024-06',
+    summary: '关于《天意》与《焦虑的人》两本书的阅读随想。',
+    link: 'https://zhuanlan.zhihu.com/p/580935535',
+    tag: '读书随笔',
   },
 ]
 
