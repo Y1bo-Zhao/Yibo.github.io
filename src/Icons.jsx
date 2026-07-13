@@ -68,6 +68,12 @@ export function Icon({ name, size = 20 }) {
           <circle cx="12" cy="10" r="3" />
         </svg>
       )
+    case 'chevron':
+      return (
+        <svg {...props}>
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      )
     case 'phone':
       return (
         <svg {...props}>

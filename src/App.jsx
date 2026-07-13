@@ -7,7 +7,7 @@ const nav = [
   { id: 'about', label: '关于' },
   { id: 'publications', label: '论文' },
   { id: 'projects', label: '项目' },
-  { id: 'blog', label: '写作' },
+  { id: 'blog', label: '随笔' },
   { id: 'contact', label: '联系' },
 ]
 
@@ -254,16 +254,14 @@ function Blog() {
     <section id="blog" className="section">
       <div className="section-head" data-reveal>
         <span className="section-index">04</span>
-        <h2 className="section-title">写作 · 知乎</h2>
+        <h2 className="section-title">随笔</h2>
       </div>
       <div className="post-list">
         {posts.map((p) => (
           <a
             className="post-item"
-            href={p.link}
-            target="_blank"
-            rel="noreferrer"
-            key={p.title}
+            href={`#/essay/${p.slug}`}
+            key={p.slug}
             data-reveal
           >
             <div className="post-main">
@@ -282,13 +280,58 @@ function Blog() {
   )
 }
 
+function ArticlePage({ post }) {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [post])
+  const hasContent = post.content && post.content.length > 0
+  return (
+    <div className="article-wrap">
+      <div className="article-topbar">
+        <a className="article-back" href="#blog">
+          <span className="back-arrow">←</span> 返回主页
+        </a>
+        <a className="brand" href="#home">
+          <span className="brand-mark">{profile.name.charAt(0)}</span>
+          <span className="brand-name">{profile.name}</span>
+        </a>
+      </div>
+      <article className="article">
+        <span className="post-tag">{post.tag}</span>
+        <h1 className="article-title">{post.title}</h1>
+        <div className="article-meta">
+          <time>{post.date}</time>
+        </div>
+        <div className="article-body">
+          {hasContent ? (
+            post.content.map((para, i) => <p key={i}>{para}</p>)
+          ) : (
+            <p className="article-pending">正文整理中，敬请期待。</p>
+          )}
+        </div>
+        {post.source && (
+          <a
+            className="article-source"
+            href={post.source}
+            target="_blank"
+            rel="noreferrer"
+          >
+            原文首发于知乎 <Icon name="arrow" size={14} />
+          </a>
+        )}
+      </article>
+      <Footer />
+    </div>
+  )
+}
+
 function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="contact-card" data-reveal>
         <span className="section-index">05</span>
         <h2 className="contact-title">
-          一起探索<span className="gradient-text">机器人的未来</span>
+          一起探索<span className="gradient-text">世界</span>
         </h2>
         <p className="contact-sub">
           有科研合作、学术交流或只是想打个招呼？欢迎通过邮件或电话联系我。
@@ -326,7 +369,7 @@ function Footer() {
   )
 }
 
-export default function App() {
+function Home() {
   const [active, setActive] = useState('home')
   const ticking = useRef(false)
   useReveal()
@@ -365,4 +408,25 @@ export default function App() {
       <Footer />
     </>
   )
+}
+
+// 极简的 hash 路由：#/essay/<slug> → 文章页；其余 → 主页
+function getRoute() {
+  const m = window.location.hash.match(/^#\/essay\/(.+)$/)
+  return m ? { name: 'essay', slug: decodeURIComponent(m[1]) } : { name: 'home' }
+}
+
+export default function App() {
+  const [route, setRoute] = useState(getRoute)
+  useEffect(() => {
+    const onHash = () => setRoute(getRoute())
+    window.addEventListener('hashchange', onHash)
+    return () => window.removeEventListener('hashchange', onHash)
+  }, [])
+
+  if (route.name === 'essay') {
+    const post = posts.find((p) => p.slug === route.slug)
+    if (post) return <ArticlePage post={post} />
+  }
+  return <Home />
 }

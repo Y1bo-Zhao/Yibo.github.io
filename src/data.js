@@ -115,28 +115,38 @@ export const projects = [
   },
 ]
 
-// ---- 知乎写作 ----
+// ---- 随笔：每篇有独立的站内文章页 ----
+// slug   : 文章页地址（.../#/essay/<slug>），保持唯一即可
+// content: 正文。数组每个元素是一段文字；留空则页面显示“正文整理中”。
+//          之后把你文章的正文按段落填进 content 即可在本站阅读。
+// source : （可选）原文链接，会在文章页底部以小字“原文首发”呈现，不需要可删掉。
 export const posts = [
   {
+    slug: 'minimum-snap-se3',
     title: 'UAVs Planning and Control 学习笔记（一）：Minimum Snap + SE(3) Control',
     date: '2023-08',
     summary: 'Minimum Snap 轨迹生成与 SE(3) 几何控制的推导与学习笔记。',
-    link: 'https://zhuanlan.zhihu.com/p/580647314',
     tag: '规划与控制',
+    source: 'https://zhuanlan.zhihu.com/p/580647314',
+    content: [],
   },
   {
+    slug: 'mpc-notes',
     title: 'UAVs Planning and Control 学习笔记（二）：MPC 及其变种的推导和示例',
     date: '2023-10',
     summary: '模型预测控制（MPC）及若干变种的推导思路与示例。',
-    link: 'https://zhuanlan.zhihu.com/p/652151656',
     tag: '控制',
+    source: 'https://zhuanlan.zhihu.com/p/652151656',
+    content: [],
   },
   {
+    slug: 'book-notes-tianyi',
     title: '读书笔记：《天意》+《焦虑的人》',
     date: '2024-06',
     summary: '关于《天意》与《焦虑的人》两本书的阅读随想。',
-    link: 'https://zhuanlan.zhihu.com/p/580935535',
     tag: '读书随笔',
+    source: 'https://zhuanlan.zhihu.com/p/580935535',
+    content: [],
   },
 ]
 

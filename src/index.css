@@ -510,8 +510,8 @@ a {
 }
 .post-item:last-child { border-bottom: 1px solid var(--border); }
 .post-item:hover {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
   background: var(--surface);
 }
 .post-tag {
@@ -655,6 +655,81 @@ a.pub-item { color: inherit; }
   font-size: 0.95rem;
 }
 .contact-card .hero-socials { margin-top: 28px; }
+
+/* ============================================================
+   Article page（站内文章页）
+   ============================================================ */
+.article-wrap {
+  min-height: 100vh;
+}
+.article-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px clamp(20px, 5vw, 48px);
+  background: rgba(7, 10, 20, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.article-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  transition: color 0.2s, gap 0.2s;
+}
+.article-back:hover { color: var(--text); gap: 12px; }
+.back-arrow { font-size: 1.1rem; }
+.article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(40px, 8vw, 80px) clamp(20px, 5vw, 32px) 80px;
+}
+.article-title {
+  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 14px 0 18px;
+}
+.article-meta {
+  display: flex;
+  gap: 16px;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-faint);
+  padding-bottom: 28px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.article-body {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  color: var(--text-dim);
+}
+.article-body p { margin-bottom: 22px; }
+.article-pending {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-faint);
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+.article-source {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 40px;
+  font-size: 0.88rem;
+  color: var(--text-faint);
+}
+.article-source:hover { color: var(--cyan); }
 
 /* ============================================================
    Footer
