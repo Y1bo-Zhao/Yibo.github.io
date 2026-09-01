@@ -25,7 +25,7 @@ export const stats = [
   { label: '当前身份', value: 'PhD', suffix: '' },
   { label: '研究方向', value: 'UAV', suffix: '' },
   { label: '发表论文', value: '6', suffix: '' },
-  { label: '论文引用', value: '567', suffix: '' },
+  { label: '论文引用', value: '635', suffix: '' },
 ]
 
 export const skills = [
@@ -41,7 +41,7 @@ export const publications = [
     authors: 'M Lyu, Y Zhao, C Huang, H Huang',
     venue: 'Remote Sensing 15(13), 3266',
     year: '2023',
-    citations: 546,
+    citations: 611,
     link: '',
     highlight: true,
   },
@@ -50,7 +50,7 @@ export const publications = [
     authors: 'Y Zhao, M Lyu, C Li, H Huang',
     venue: 'IEEE Robotics and Automation Letters (RA-L) 11(3), 2650-2657',
     year: '2026',
-    citations: 0,
+    citations: 1,
     link: '',
     highlight: true,
   },
@@ -75,7 +75,7 @@ export const publications = [
     authors: 'H Zhou, Y Zhao, X Xiong, Y Lou, S Kamal',
     venue: 'IEEE/RSJ Int. Conf. on Intelligent Robots and Systems (IROS)',
     year: '2022',
-    citations: 20,
+    citations: 22,
     link: '',
   },
   {
