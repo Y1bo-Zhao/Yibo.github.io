@@ -16,7 +16,7 @@ export const profile = {
   intro:
     '你好，我是赵一博（ZHAO Yibo）。本科毕业于哈尔滨工业大学（深圳），目前在香港理工大学（PolyU）攻读博士学位，专注于无人机（UAV）的规划与控制算法，同时对各类机器人系统抱有浓厚兴趣。我热衷于把优雅的算法落到真实的硬件上，让机器人在复杂环境中自主飞行与运动。',
   location: '中国香港 · Hong Kong',
-  email: '23039432r@connect.polyu.hk',
+  email: '26033834r@connect.polyu.hk',
   phone: '(+86) 150 1673 6658',
   avatar: '', // 留空则显示首字母；也可填图片 URL，例如 '/avatar.jpg'
 }
@@ -154,5 +154,5 @@ export const socials = [
   { name: 'GitHub', link: links.github, icon: 'github' },
   { name: 'Google Scholar', link: links.scholar, icon: 'scholar' },
   { name: '知乎 · Zhihu', link: links.zhihu, icon: 'zhihu' },
-  { name: 'Email', link: 'mailto:23039432r@connect.polyu.hk', icon: 'mail' },
+  { name: 'Email', link: 'mailto:26033834r@connect.polyu.hk', icon: 'mail' },
 ]
