@@ -24,7 +24,7 @@ export const profile = {
 export const stats = [
   { label: '当前身份', value: 'PhD', suffix: '' },
   { label: '研究方向', value: 'UAV', suffix: '' },
-  { label: '发表论文', value: '6', suffix: '' },
+  { label: '发表论文', value: '7', suffix: '' },
   { label: '论文引用', value: '635', suffix: '' },
 ]
 
@@ -36,6 +36,15 @@ export const skills = [
 
 // ---- 论文（数据来自 Google Scholar，如有更新请自行调整）----
 export const publications = [
+  {
+    title: 'Near-Field Obstacle Detection for Quadrotors Using Differential Ego-Noise Features',
+    authors: 'M Lyu, Y Zhao, C Huang, W-C Law, Y Li',
+    venue: 'IEEE Robotics and Automation Letters (RA-L), Early Access',
+    year: '2026',
+    citations: 0,
+    link: 'https://ieeexplore.ieee.org/document/11676034',
+    highlight: true,
+  },
   {
     title: 'Unmanned aerial vehicles for search and rescue: A survey',
     authors: 'M Lyu, Y Zhao, C Huang, H Huang',
