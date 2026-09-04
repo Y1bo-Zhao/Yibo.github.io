@@ -46,15 +46,6 @@ export const publications = [
     highlight: true,
   },
   {
-    title: 'Unmanned aerial vehicles for search and rescue: A survey',
-    authors: 'M Lyu, Y Zhao, C Huang, H Huang',
-    venue: 'Remote Sensing 15(13), 3266',
-    year: '2023',
-    citations: 611,
-    link: '',
-    highlight: true,
-  },
-  {
     title: 'Bidirectional Thrust Control for Quadrotor Safety',
     authors: 'Y Zhao, M Lyu, C Li, H Huang',
     venue: 'IEEE Robotics and Automation Letters (RA-L) 11(3), 2650-2657',
@@ -78,6 +69,15 @@ export const publications = [
     year: '2025',
     citations: 0,
     link: '',
+  },
+  {
+    title: 'Unmanned aerial vehicles for search and rescue: A survey',
+    authors: 'M Lyu, Y Zhao, C Huang, H Huang',
+    venue: 'Remote Sensing 15(13), 3266',
+    year: '2023',
+    citations: 611,
+    link: '',
+    highlight: true,
   },
   {
     title: 'IMU dead-reckoning localization with RNN-IEKF algorithm',
